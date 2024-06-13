@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/madebywelch/anthropic-go/pkg/anthropic"
-	"github.com/ryszard/agency/client"
+	"github.com/dmarkham/agency/client"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -7,7 +7,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/ryszard/agency/client"
+	"github.com/dmarkham/agency/client"
 	"github.com/sashabaranov/go-openai"
 	log "github.com/sirupsen/logrus"
 )

@@ -10,7 +10,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/ryszard/agency/client"
+	"github.com/dmarkham/agency/client"
 	log "github.com/sirupsen/logrus"
 )
 

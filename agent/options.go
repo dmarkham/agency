@@ -3,7 +3,7 @@ package agent
 import (
 	"io"
 
-	"github.com/ryszard/agency/client"
+	"github.com/dmarkham/agency/client"
 )
 
 // Option can be used to configure an agent. Note that the order in which you

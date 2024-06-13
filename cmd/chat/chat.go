@@ -5,14 +5,16 @@ import (
 	"context"
 	"flag"
 	"fmt"
+	"net/http"
 	"os"
 	"time"
 
-	"github.com/ryszard/agency/agent"
-	"github.com/ryszard/agency/client"
-	"github.com/ryszard/agency/client/exp/anthropic"
-	"github.com/ryszard/agency/client/exp/huggingface"
-	"github.com/ryszard/agency/client/openai"
+	"github.com/dmarkham/agency/agent"
+	"github.com/dmarkham/agency/client"
+	"github.com/dmarkham/agency/client/exp/anthropic"
+	"github.com/dmarkham/agency/client/exp/huggingface"
+	"github.com/dmarkham/agency/client/ollama"
+	"github.com/dmarkham/agency/client/openai"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -45,6 +47,8 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
+	case "ollama":
+		cl = ollama.New( "http://" + os.Getenv("OLLAMA_HOST"), http.DefaultClient)
 	default:
 		log.Fatalf("unknown platform: %s", *platform)
 	}

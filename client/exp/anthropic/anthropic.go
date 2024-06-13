@@ -7,7 +7,7 @@ import (
 	"io"
 
 	"github.com/madebywelch/anthropic-go/pkg/anthropic"
-	"github.com/ryszard/agency/client"
+	"github.com/dmarkham/agency/client"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -100,7 +100,7 @@ func (cl *Client) createChatCompletionStream(ctx context.Context, req client.Cha
 	callback := func(resp *anthropic.CompletionResponse) error {
 		log.WithField("resp", fmt.Sprintf("%#v", resp)).Debug("Received response from server")
 		response = resp
-		if _, err := w.Write([]byte(resp.Delta)); err != nil {
+		if _, err := w.Write([]byte("")); err != nil {
 			return err
 		}
 		return nil
